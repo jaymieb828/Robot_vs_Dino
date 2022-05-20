@@ -1,29 +1,44 @@
-from dinos import Dino
-from robots import Robot
+from battlefield import Battlefield
 
-
-robot_1 = Robot("T1000")
-dino_1 = Dino("T-rex")
-
-robot_1.attack(dino_1)
-while dino_1.health >= 0:
-    dino_1.health = dino_1.health - robot_1.attack_power
-    print(f"Your dinosaurs current health is {dino_1.health}!")
-    dino_1.attack(robot_1)
-    continue
-if dino_1.health <= 0:
-    print("Your dinosaur is EXTINCT!")
+battle_1 = Battlefield()
+battle_1.run_game()
 
 
 
-dino_1.attack(robot_1)
-while robot_1.health >= 0:
-    robot_1.health = robot_1.health - dino_1.attack_power
-    print(f"Your robot's current health is {robot_1.health}!")
-    robot_1.attack(dino_1)
-    continue
-if dino_1.health <= 0:
-    print("Your robot has been disassemled!")
+
+
+
+
+
+
+
+# from dinos import Dino
+# from robots import Robot
+
+
+# robot_1 = Robot("T1000")
+# dino_1 = Dino("T-rex")
+# robot_attack = robot_1.attack_power
+
+# robot_1.attack(dino_1)
+# while dino_1.health >= 0:
+#     dino_1.health = dino_1.health - robot_attack
+#     print(f"Your dinosaurs current health is {dino_1.health}!")
+#     dino_1.attack(robot_1)
+#     continue
+# if dino_1.health <= 0:
+#     print("Your dinosaur is EXTINCT!")
+
+
+
+# dino_1.attack(robot_1)
+# while robot_1.health >= 0:
+#     robot_1.health = robot_1.health - dino_1.attack_power
+#     print(f"Your robot's current health is {robot_1.health}!")
+#     robot_1.attack(dino_1)
+#     continue
+# if dino_1.health <= 0:
+#     print("Your robot has been disassemled!")
 
 
 
