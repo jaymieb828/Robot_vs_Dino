@@ -14,7 +14,7 @@ class Dino:
 
     
 
-    # def attack(self, robot):
+
         
     
 
