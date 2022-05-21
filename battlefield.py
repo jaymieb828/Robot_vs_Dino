@@ -1,4 +1,6 @@
 
+from re import T
+import re
 from dinos import Dino
 from robots import Robot
 from time import sleep
@@ -34,17 +36,22 @@ class Battlefield:
     def battle_phase(self):
         while dino_1.health and robot_1.health >= 0:
             robot_1.attack(dino_1)
-            dino_1.health = dino_1.health - robot_attack
             print(f"{robot_1.name} has attacked {dino_1.name} with a {robot_1.weapon}!")
             sleep(.5)
             print(f"{dino_1.name}'s current health is {dino_1.health}!")
             sleep(.5)
+            if dino_1.health <= 0:
+                break
             dino_1.attack(robot_1)
-            robot_1.health = robot_1.health - dino_attack
             print(f"{dino_1.name} has attacked {robot_1.name}!")
             sleep(.5)
             print(f"{robot_1.name}'s current health is {robot_1.health}!")
+            if robot_1.health <= 0:
+                break
             sleep(.5)
+            # continue
+        if dino_1.health or robot_1.health <=0:
+            return False
 
                         
     def display_winner(self):
@@ -53,6 +60,6 @@ class Battlefield:
             sleep(.5)
         elif dino_1.health <= robot_1.health:
             print(f"{robot_1.name} has terminated {dino_1.name}!")
-        elif dino_1.health == robot_1.health:
+        else:
             print("The battle is a draw.")
         
