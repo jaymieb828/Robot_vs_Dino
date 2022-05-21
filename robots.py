@@ -1,7 +1,7 @@
 from weapons import Weapon
 import random
 
-active_weapon = Weapon("lightsaber", (random.randint(5,50)))
+active_weapon = Weapon("lightsaber", (random.randint(25,50)))
 
 
 
