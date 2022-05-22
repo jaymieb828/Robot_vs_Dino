@@ -28,11 +28,9 @@ class Battlefield:
     def display_welcome(self):
         print("WELCOME TO ROBOT VS DINOSAUR!")
         sleep(.5)
-        print(f"{dino_1.name} attack power is {dino_1.attack_power}!")
+        print(f"In this battle, {dino_1.name} faces {robot_1.name} in a fight to the death!")
         sleep(.5)
-        print(f"{robot_1.name} attack power is {robot_1.attack_power}!")
-        sleep(.5)
-
+        
     def battle_phase(self):
         while dino_1.health and robot_1.health >= 0:
             robot_1.attack(dino_1)
